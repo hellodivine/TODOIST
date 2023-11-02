@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.6/dist/sweetalert2.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/heroicons-css@0.1.1/heroicons.min.css">
+  <title>Todo List</title>
+
+  <style>
+    .todo-icons {
+      opacity: 0;
+      transition: opacity 0.2s ease-in-out;
+    }
+
+    .todo:hover .todo-icons {
+      opacity: 1;
+    }
+
+    .todo-input {
+      border: 2px solid #3490dc;
+      border-radius: 0.25rem;
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .add-update-btn {
+      background-color: burlywood;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 0 0.25rem 0.25rem 0;
+      cursor: pointer;
+    }
+
+    .add-update-btn:hover {
+      background-color: rgb(241, 149, 28);
+    }
+  </style>
+  
+</head>
+<body class="bg-orange-300">
+
+  <div class="container mx-auto p-4">
+    <h1 class="text-3xl font-semibold mb-4 text-center">TODOIST</h1>
+
+    <div class="flex mb-4">
+      <input type="text" id="todoInput" class="todo-input flex-grow p-2 focus:outline-none">
+      <button onclick="addTodo()" id="addBtn" class="add-update-btn rounded-r-md ml-2">Add Todo</button>
+      <button onclick="updateTodo()" id="updateBtn" class="hidden bg-green-500 text-white p-2 rounded-r-md ml-2">Update Todo</button>
+    </div>
+
+    <ul id="todoList" class="space-y-2">
+      <!-- Todo items will be dynamically added here -->
+    </ul>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.6/dist/sweetalert2.all.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
